@@ -17,11 +17,14 @@ To find out more about the Rabble Rouser project, check out our [documentation r
 2. Clone the project:
 
         git clone https://github.com/rabblerouser/core.git
-
+        NB:If you are using windows ensure that your git settings have a line-ending type of unix BEFORE you clone the project:
+          >git config core.autocrlf false
 3. Start a Docker container to develop in (this also starts containers for dependent services):
 
         ./go.sh # For Mac/Linux
-        # Windows not supported yet :(
+        # Windows type:
+          docker-compose up -d --remove-orphans
+          docker-compose exec core /bin/sh
 
 4. Install/compile the project, seed the database, run the tests, then start the app
 
